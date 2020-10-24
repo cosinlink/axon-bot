@@ -1,0 +1,38 @@
+{
+  "name": "axon-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.11.2",
+    "dotenv": "^8.2.0",
+    "home": "^2.0.0",
+    "messaging-api-telegram": "^0.8.2"
+  },
+  "devDependencies": {
+    "@types/async": "^3.0.3",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "standard": "^14.3.1",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.6.4"
+  },
+  "standard": {
+    "parser": "@typescript-eslint/parser",
+    "env": [
+      "jest"
+    ],
+    "plugins": [
+      "typescript"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
