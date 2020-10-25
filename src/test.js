@@ -1,4 +1,4 @@
-const {isWorkDay, alarm} = require('./main')
+const {isWorkDay, alarm} = require('./utils')
 
 async function testWorkDay() {
   const testVectors = [

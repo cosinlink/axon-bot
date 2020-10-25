@@ -1,8 +1,9 @@
 const {TelegramClient} = require( 'messaging-api-telegram')
 require('dotenv').config()
-const config = process.env
 
 module.exports = function (text) {
+    const config = process.env
+    console.log('config', config)
     if (!config.TELEGRAM_BOT_KEY) {
         throw new Error('cannot find TELEGRAM_BOT_KEY config')
     }
