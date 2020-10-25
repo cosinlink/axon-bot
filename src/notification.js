@@ -1,17 +1,17 @@
-import * as config from './config'
+const {TelegramClient} = require( 'messaging-api-telegram')
+require('dotenv').config()
+const config = process.env
 
-import {TelegramClient} from 'messaging-api-telegram'
-
-export default async function (text) {
+module.exports = function (text) {
     if (!config.TELEGRAM_BOT_KEY) {
         throw new Error('cannot find TELEGRAM_BOT_KEY config')
     }
 
-    const chat_id = config.TELEGRAM_CHAT_ID
+    const chat_id = config.TELEGRAM_CHANNEL_ID
 
     const client = TelegramClient.connect(config.TELEGRAM_BOT_KEY)
 
-    await client.sendMessage(
+    client.sendMessage(
         chat_id,
         text,
         {
@@ -23,3 +23,5 @@ export default async function (text) {
         console.log('send', text)
     })
 }
+
+
