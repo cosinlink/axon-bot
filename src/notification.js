@@ -8,8 +8,7 @@ module.exports = function (text) {
         throw new Error('cannot find TELEGRAM_BOT_KEY config')
     }
 
-    const chat_id = config.TELEGRAM_CHANNEL_ID
-
+    const chat_id = config.DEV ? config.TELEGRAM_CHANNEL_ID : config.TELEGRAM_AXON_GROUP
     const client = TelegramClient.connect(config.TELEGRAM_BOT_KEY)
 
     client.sendMessage(
