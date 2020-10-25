@@ -27,14 +27,6 @@ async function testWorkDay() {
       'output': false
     },
     {
-      'input': '2020-10-26',
-      'output': true
-    },
-    {
-      'input': '2020-09-30',
-      'output': true
-    },
-    {
       'input': '2020-10-10',
       'output': true
     },
