@@ -65,21 +65,22 @@ const isWorkDay = async function (date) {
   }
   let dateString = dateFormat("YYYYmmdd", date)
 
+  // this api is invalid now
   // http://opendata.baidu.com/api.php?query=20201008&resource_id=6018&format=json
-  let status
-  while (true) {
-    let res = await superagent.get(`http://opendata.baidu.com/api.php?query=${dateString}&resource_id=6018&format=json`)
-    if (res.text) {
-      const data = JSON.parse(res.text)
-      const arr = data.data[0] ? data.data[0].holiday : null
-      if (arr && arr.length > 0) {
-        const allHolidays = extractHolidays(arr)
-        status = dateStatus(dateString, allHolidays)
-        break
-      }
-    }
-    await sleep(10000)
-  }
+  let status = null
+  // while (true) {
+  //   let res = await superagent.get(`http://opendata.baidu.com/api.php?query=${dateString}&resource_id=6018&format=json`)
+  //   if (res.text) {
+  //     const data = JSON.parse(res.text)
+  //     const arr = data.data[0] ? data.data[0].holiday : null
+  //     if (arr && arr.length > 0) {
+  //       const allHolidays = extractHolidays(arr)
+  //       status = dateStatus(dateString, allHolidays)
+  //       break
+  //     }
+  //   }
+  //   await sleep(10000)
+  // }
 
   switch (status) {
     case '1':  // holiday
